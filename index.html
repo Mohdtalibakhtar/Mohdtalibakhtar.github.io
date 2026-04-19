@@ -1,638 +1,1303 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Mohd Talib Akhtar - AI Systems Architect</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Talib Akhtar — AI Systems Architect</title>
+    <meta name="description" content="Senior Data Scientist and AI Systems Architect specialising in production multi-agent systems, MCP servers, and RAG pipelines.">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/aos.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+        :root {
+            --bg: #fafaf7;
+            --bg-alt: #f5f5f0;
+            --fg: #0a0a0a;
+            --fg-muted: #555;
+            --fg-subtle: #888;
+            --accent: #ff5c28;
+            --accent-2: #00875f;
+            --accent-3: #2563eb;
+            --border: #e5e5e0;
+            --border-strong: #0a0a0a;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', sans-serif;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
 
+        body {
+            background: var(--bg);
+            color: var(--fg);
+            font-family: var(--sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(0,0,0,0.04) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
 
-<style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-/*======================================
-//--//-->   ABOUT
-======================================*/
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 247, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
 
-.about-mf .box-shadow-full {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.about-mf .about-img {
-  margin-bottom: 2rem;
-}
+        .nav-logo {
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
 
-.about-mf .about-img img {
-  margin-left: 10px;
-}
+        .nav-logo::before {
+            content: '> ';
+            color: var(--accent);
+        }
 
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+        }
 
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
+        .nav-links a {
+            color: var(--fg-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
 
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
+        .nav-links a:hover { color: var(--accent); }
 
+        .nav-links a::before {
+            content: './';
+            color: var(--fg-subtle);
+            margin-right: 2px;
+        }
 
-/* Animation styles */
-#typing-animation {
-  position: relative;
-  font-size: 30px;
-  font-weight: bold;
-  color: rgb(255, 255, 255);
-  overflow: hidden;
-  white-space: nowrap;
-  animation: typing 3s steps(20, end) infinite;
-}
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
 
-#typing-animation:before {
-  content: "";
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: #ccc;
-  animation: typing-cursor 0.5s ease-in-out infinite;
-}
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            position: relative;
+        }
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
 
-@keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
-}
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
 
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--fg-muted);
+            margin-bottom: 1.5rem;
+            padding: 0.4rem 0.8rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
 
-/* project image zoom effect */
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-2);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
 
-.zoom-effect {
-  overflow: hidden;
-  transition: transform 0.3s ease-out;
-}
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.85); }
+        }
 
-.zoom-effect:hover {
-  transform: scale(1.1);
-}
+        h1.hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
 
+        h1.hero-title .highlight {
+            background: linear-gradient(120deg, transparent 0%, transparent 60%, rgba(255, 92, 40, 0.25) 60%, rgba(255, 92, 40, 0.25) 90%, transparent 90%);
+            padding: 0 0.1em;
+        }
 
-</style>
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--fg-muted);
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
 
+        .hero-meta {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            color: var(--fg-subtle);
+            margin-bottom: 2.5rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-  </head>
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
-	  
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Mohd Talib Akhtar</a>
-	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+        .hero-meta span::before {
+            content: '// ';
+            color: var(--accent);
+        }
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav nav ml-auto">
-	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" >
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Hello!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Mohd Talib Akhtar</span></h1>
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
 
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
+        .btn {
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            padding: 0.85rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-						<script>
+        .btn-primary {
+            background: var(--fg);
+            color: var(--bg);
+            border: 1px solid var(--fg);
+        }
 
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
+        .btn-primary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
 
-						// Create an array of typing text
-						const typingTexts = [
-						'AI Architect  ',
-						'GenAI Specialist  ',
-						'Multi-Agent Builder   ',
-						];
+        .btn-secondary {
+            background: transparent;
+            color: var(--fg);
+            border: 1px solid var(--border-strong);
+        }
 
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
+        .btn-secondary:hover {
+            background: var(--fg);
+            color: var(--bg);
+        }
 
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
+        /* TERMINAL CARD */
+        .terminal-card {
+            background: white;
+            border: 1px solid var(--border-strong);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 8px 8px 0 var(--fg);
+            transition: transform 0.3s;
+        }
 
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
+        .terminal-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0 var(--fg);
+        }
 
-						</script>
+        .terminal-header {
+            background: var(--bg-alt);
+            padding: 0.85rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--fg-muted);
+        }
 
-						<br>
-						<br>
-			            <h2>Data Scientist & AI Systems Architect</h2>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-							<a href="https://github.com/Mohdtalibakhtar" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
 
+        .terminal-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: block;
+        }
 
+        .dot-red { background: #ff5f57; }
+        .dot-yellow { background: #febc2e; }
+        .dot-green { background: #28c840; }
 
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
-    	<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-									  <div class="about-img">
-										<img src="images/profile_img.png" class="img-fluid rounded b-shadow-a" alt="">
-									  </div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Mohd Talib Akhtar</span></p>
-										<p><span class="title-s">Job Role: </span> <span>AI Systems Architect</span></p>
-										<p><span class="title-s">Experience: </span> <span>3 Years</span></p>
-										<p><span class="title-s">Address: </span> <span>Bangalore, India</span></p>
-									  </div>
-									</div>
-								  </div>
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+        }
 
-								<div class="skill-mf">
-									<p class="title-s">Skills</p>
+        .terminal-body {
+            padding: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.88rem;
+            line-height: 1.9;
+        }
 
-									<span>MULTI-AGENT SYSTEMS</span> <span class="pull-right">95%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
+        .terminal-line { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .prompt { color: var(--accent); }
+        .output { color: var(--fg-muted); }
+        .keyword { color: var(--accent-3); }
+        .string { color: var(--accent-2); }
+        .comment { color: var(--fg-subtle); font-style: italic; }
 
-									<span>GENERATIVE AI & LLM</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>PYTHON</span> <span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1em;
+            background: var(--fg);
+            vertical-align: text-bottom;
+            animation: blink 1s infinite;
+        }
 
-									<span>RAG PIPELINES</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-									<span>MACHINE LEARNING</span> <span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
-								
-								<p><strong>The best technology is invisible. It just works.</strong></p>
-								
-								<p>I'm a Data Scientist and AI Systems Architect specializing in multi-agent architectures and production-scale GenAI applications. 
-								My focus is making powerful, complex AI systems feel simple and natural to use. I've learned from my time in data analytics and 
-								program analysis that the hard part isn't building models—it's building solutions that people actually adopt.</p>
-								
-								<p>Currently specializing in building multi-agent architectures where GenAI moves from demos to production-ready solutions 
-								that actually change how work gets done. I'm deep in this space because we're still in the early innings of figuring out what 
-								these tools can really do—not the hype stuff, but the practical, production-ready applications that matter.</p>
-								
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>AI Systems Architect &amp; Data Scientist</span></li>
-									<li class="d-flex"><span>Specialization:</span> <span>Multi-Agent AI Systems, GenAI &amp; RAG</span></li>
-									<li class="d-flex"><span>Education:</span> <span>MSc Data Science (City, University of London)</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi, Urdu</span></li>
-									<li class="d-flex"><span>Core Skills:</span> <span>Python, Neo4j, Pydantic AI, PySpark</span></li>
-									<li class="d-flex"><span>AI Technologies:</span> <span>Multi-Agent Systems, LLM, RAG, MCP, NLP</span></li>
-									<li class="d-flex"><span>Tools:</span> <span>Databricks, Docker, Power BI, Git</span></li>
-									<li class="d-flex"><span>Cloud:</span> <span>AWS, Azure, Google Cloud</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Building AI Products, Open Source &amp; Chess</span></li>
-								</ul>
-							</div>
-						</div>
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
 
+        /* SECTION HEADERS */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
 
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="15">0</span> <span>+</span>
-									<span>&nbsp; GenAI Projects Deployed</span>
-								</p>
-								<p><a href="https://www.linkedin.com/in/Mohdtalibakhtar/" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </section>
+        .section-label {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
+        .section-label::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--accent);
+        }
 
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 3rem;
+            line-height: 1.1;
+        }
 
-	
-    <section class="ftco-section ftco-no-pb" id="resume-section">
-    	<div class="container">
-    		<div class="row justify-content-center pb-5">
-          <div class="col-md-10 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Resume</h1>
-            <h2 class="mb-4">Resume</h2>
-            <p>AI Systems Architect specializing in building production-ready multi-agent systems and GenAI applications. Expert in designing intelligent 
-			workflows that bridge the gap between cutting-edge AI capabilities and real-world business solutions.</p>
-          </div>
-        </div>
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
 
-		<div class="row">
-			<h1 class="big-4">Experience</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">February 2025 - Present</span>
-						<h2>Data Scientist</h2>
-						<span class="position">Iridescent Technology</span>
-						<p class="mt-4">Building production-scale multi-agent AI systems and GenAI applications at an innovative AI-first company.
-							<ul>
-								<li><strong>Architected multi-agent AI system</strong> with specialized agents for user guidance, data processing, and workflow 
-								automation, designing complete system architecture and inter-agent communication protocols.</li>
-								
-								<li><strong>Engineered Model Context Protocol (MCP) server</strong> as foundational middleware enabling real-time synchronization 
-								and orchestration between AI agents, product services, and external APIs.</li>
-								
-								<li><strong>Built end-to-end RAG pipeline</strong> using Neo4j graph database and Pydantic AI for structured LLM outputs, 
-								implementing context-aware retrieval and intelligent routing to power AI-driven features.</li>
-								
-								<li><strong>Developed 'JAN' AI agent</strong> converting natural language queries into automated data visualizations, 
-								enabling instant insights through conversational prompts.</li>
-							</ul>
-						</p>
-					</div>
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
 
-				</div>
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--fg-muted);
+            margin-bottom: 1.5rem;
+            max-width: 640px;
+        }
 
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">February 2024 - December 2024</span>
-						<h2>Data Analyst</h2>
-						<span class="position">Divas World Ltd</span>
-						<p class="mt-4">Led data analytics initiatives for a global e-commerce company, driving business growth through data-driven insights.<ul>
-								<li>Analyzed customer data from Salesforce CRM using SQL and Python, achieving 15% increase in sales conversion rates and 
-								20% reduction in customer churn.</li>
-								
-								<li>Led A/B testing and hypothesis testing to validate product changes, designing test plans, analyzing results, and 
-								presenting actionable insights to product teams.</li>
-								
-								<li>Built interactive Power BI dashboards translating complex data findings into clear insights for cross-functional stakeholders.</li>
-								
-								<li>Automated data extraction and transformation processes using Python and SQL, reducing manual preparation time by 40%.</li>
-							</ul>
-						</p>
-					</div>
+        .about-text p strong {
+            color: var(--fg);
+            font-weight: 600;
+        }
 
-				</div>
-			</div>
+        .quote {
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border-left: 3px solid var(--accent);
+            border-radius: 0 6px 6px 0;
+            color: var(--fg);
+            font-weight: 500;
+        }
 
-		<br>
+        .info-card {
+            background: white;
+            border: 1px solid var(--border-strong);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.85rem;
+        }
 
-		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">July 2022 - August 2023</span>
-						<h2>Program Analyst</h2>
-						<span class="position">WNS Global Services</span>
-						<p class="mt-4">Built data infrastructure and ML pipelines for enterprise clients, establishing foundation for advanced analytics.
-							<ul>
-								<li>Built and maintained production data pipelines using Databricks, Python, and PySpark for large-scale data processing, 
-								ensuring data quality and integrity across multiple sources.</li>
-								
-								<li>Developed machine learning model pipelines in collaboration with data scientists, implementing SQL-based data warehousing 
-								solutions and feature engineering workflows.</li>
-								
-								<li>Performed exploratory data analysis on business-critical datasets to identify trends and anomalies, delivering insights 
-								that informed strategic decision-making.</li>
-								
-								<li>Engineered automated data quality validation systems using Python and SQL, improving data reliability by 10% through 
-								anomaly detection and correction.</li>
-							</ul>
-						</p>
-					</div>
+        .info-row {
+            display: flex;
+            padding: 0.65rem 0;
+            border-bottom: 1px dashed var(--border);
+        }
 
-				</div>
-			</div>
+        .info-row:last-child { border: 0; }
 
-		<br>
-		<br>
+        .info-key {
+            color: var(--fg-subtle);
+            min-width: 90px;
+        }
 
-		<div class="row">
-			<h1 class="big-4">Education</h1>
-			<div class="underline"></div>
-		</div>
-		<br>
-		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2023-2024</span>
-    					<h2>Masters of Science in Data Science</h2>
-    					<span class="position">City, University of London</span>
-    					<p class="mt-4">Grade: Merit (71%)<br>Focus: Machine Learning, Deep Learning, Natural Language Processing, and AI Systems</p>
-    				</div>
-    			</div>
+        .info-value { color: var(--fg); font-weight: 500; }
 
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2019-2022</span>
-    					<h2>Bachelor of Technology in Computer Science</h2>
-    					<span class="position">Jamia Hamdard University</span>
-    					<p class="mt-4">Grade: First Class Distinction (78%)<br>Focus: Data Structures, Algorithms, Database Systems, and Software Engineering</p>
-    				</div>
-				</div>
-    		</div>
+        /* SKILLS STACK */
+        .stack-section {
+            margin-top: 4rem;
+        }
 
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/file/d/15mrMzk5JT3-NPnK2cCyQqWwTjmL3YD3b/view?usp=sharing" class="btn btn-primary py-4 px-5">Download CV</a></p>
-    			</div>
-    		</div>
-    	</div>
-    </section>
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
 
-   
+        .stack-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            transition: all 0.25s;
+        }
 
-    <section class="ftco-section" id="project-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Projects</h2>
-            <p>Featured GenAI and Multi-Agent Systems projects demonstrating production-ready AI applications.</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://prepareme.tech" class="block-20 zoom-effect" style="background-image: url('images/prepareme.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
+        .stack-card:hover {
+            border-color: var(--fg);
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 0 var(--fg);
+        }
 
-                <h3 class="heading"><a href="https://prepareme.tech">PrepareMe - AI Career Assistant Platform</a></h3>
-                <p>Production GenAI platform featuring multi-agent architecture for resume optimization, personalized email outreach, and interactive mock interviews. Built with RAG pipeline using vector databases for context-aware career advice.</p>
-              </div>
+        .stack-category {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .stack-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .stack-chip {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            background: var(--bg-alt);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            color: var(--fg-muted);
+        }
+
+        /* EXPERIENCE */
+        .exp-item {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .exp-item:hover {
+            padding-left: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+            .exp-item:hover { padding-left: 0; }
+        }
+
+        .exp-date {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--fg-subtle);
+            padding-top: 0.35rem;
+        }
+
+        .exp-date::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            vertical-align: middle;
+        }
+
+        .exp-role {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-company {
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .exp-desc {
+            color: var(--fg-muted);
+            margin-bottom: 1rem;
+            max-width: 720px;
+        }
+
+        .exp-list {
+            list-style: none;
+            max-width: 720px;
+        }
+
+        .exp-list li {
+            color: var(--fg-muted);
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.6rem;
+            line-height: 1.6;
+        }
+
+        .exp-list li::before {
+            content: '→';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-family: var(--mono);
+            font-weight: 700;
+        }
+
+        .exp-list li strong { color: var(--fg); font-weight: 600; }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid var(--border-strong);
+            border-radius: 10px;
+            padding: 1.75rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 6px 6px 0 var(--fg);
+        }
+
+        .project-card:hover::before { transform: scaleX(1); }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .project-status {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border: 1px solid var(--accent-2);
+            color: var(--accent-2);
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-status.beta {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title a {
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .project-title a:hover { color: var(--accent); }
+
+        .project-desc {
+            color: var(--fg-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .project-tag {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            padding: 0.2rem 0.55rem;
+            background: var(--bg-alt);
+            color: var(--fg-muted);
+            border-radius: 3px;
+        }
+
+        .project-link {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            color: var(--fg);
+            text-decoration: none;
+            border-bottom: 1px solid var(--fg);
+            padding-bottom: 2px;
+            transition: all 0.2s;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* FEATURED WORK */
+        .featured-section {
+            margin-top: 4rem;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .featured-card {
+            background: white;
+            border: 1px solid var(--border-strong);
+            border-radius: 10px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 92, 40, 0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .featured-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 6px 6px 0 var(--fg);
+            border-color: var(--accent);
+        }
+
+        .featured-card:hover::after { opacity: 1; }
+
+        .featured-label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .featured-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: var(--fg);
+        }
+
+        .featured-desc {
+            font-size: 0.95rem;
+            color: var(--fg-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .featured-link {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            color: var(--fg);
+            border-bottom: 1px solid var(--fg);
+            padding-bottom: 2px;
+            align-self: flex-start;
+            transition: all 0.2s;
+        }
+
+        .featured-card:hover .featured-link {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* CONTACT */
+        .contact-section {
+            background: var(--fg);
+            color: var(--bg);
+            padding: 6rem 0;
+            border-radius: 16px;
+            margin: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section .container { padding: 0 3rem; }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,92,40,0.3) 0%, transparent 70%);
+        }
+
+        .contact-section .section-label { color: var(--accent); }
+
+        .contact-section h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .contact-section h2 span { color: var(--accent); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item {
+            font-family: var(--mono);
+        }
+
+        .contact-label {
+            font-size: 0.75rem;
+            color: var(--fg-subtle);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            color: var(--bg);
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(250,250,247,0.3);
+            padding-bottom: 2px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+
+        .contact-value:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 2rem 0 4rem;
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--fg-subtle);
+            text-align: center;
+        }
+
+        footer a { color: var(--fg-muted); text-decoration: none; }
+        footer a:hover { color: var(--accent); }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+
+        /* TYPING ANIMATION */
+        .typing-container {
+            font-family: var(--mono);
+            font-size: 1.1rem;
+            color: var(--fg);
+            margin-bottom: 1rem;
+            min-height: 1.8rem;
+        }
+
+        .typing-prefix { color: var(--accent); }
+        .typing-text { color: var(--fg); font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="nav-logo">talib.dev</div>
+        <ul class="nav-links">
+            <li><a href="#about">about</a></li>
+            <li><a href="#experience">experience</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#contact">contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <div class="typing-container fade-in stagger-1">
+                    <span class="typing-prefix">$ </span><span class="typing-text" id="typing"></span><span class="cursor"></span>
+                </div>
+
+                <h1 class="hero-title fade-in stagger-2">
+                    I build <span class="highlight">multi-agent AI</span> that survives production.
+                </h1>
+
+                <p class="hero-subtitle fade-in stagger-3">
+                    Senior Data Scientist and AI Systems Architect. I ship production multi-agent systems, MCP servers, and RAG pipelines that real users depend on every day.
+                </p>
+
+                <div class="hero-meta fade-in stagger-3">
+                    <span>Based in New Delhi</span>
+                    <span>3 yrs experience</span>
+                    <span>MSc Data Science, London</span>
+                </div>
+
+                <div class="hero-cta fade-in stagger-4">
+                    <a href="#projects" class="btn btn-primary">
+                        View projects →
+                    </a>
+                    <a href="https://linkedin.com/in/mohdtalibakhtar" target="_blank" class="btn btn-secondary">
+                        LinkedIn
+                    </a>
+                </div>
             </div>
-          </div>
-          
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/Mohdtalibakhtar/Cold_Email_Generator" class="block-20 zoom-effect" style="background-image: url('images/cold_email_generator.png');">
-              </a>
-              <div class="text mt-3 float-right d-block">
 
-                <h3 class="heading"><a href="https://github.com/Mohdtalibakhtar/Cold_Email_Generator">Intelligent Cold Email Generator</a></h3>
-                <p>GenAI-powered tool leveraging LLMs to generate personalized, context-aware cold emails. Implements prompt engineering and few-shot learning for high-quality, professional outreach at scale.</p>
-              </div>
+            <div class="terminal-card fade-in stagger-3">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                    <div class="terminal-title">~/talib/about.py</div>
+                </div>
+                <div class="terminal-body">
+                    <div><span class="keyword">class</span> <span class="string">Engineer</span>:</div>
+                    <div>&nbsp;&nbsp;<span class="prompt">name</span> = <span class="string">"Mohd Talib Akhtar"</span></div>
+                    <div>&nbsp;&nbsp;<span class="prompt">role</span> = <span class="string">"AI Systems Architect"</span></div>
+                    <div>&nbsp;&nbsp;<span class="prompt">building</span> = [</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"multi-agent systems"</span>,</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"MCP servers"</span>,</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"RAG pipelines"</span>,</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"voice agents"</span></div>
+                    <div>&nbsp;&nbsp;]</div>
+                    <div>&nbsp;&nbsp;<span class="prompt">status</span> = <span class="string">"shipping daily"</span></div>
+                    <div class="comment"># always learning, always building</div>
+                </div>
             </div>
-          </div>
-          
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-              <a href="https://github.com/Mohdtalibakhtar" class="block-20 zoom-effect" style="background-image: url('images/multiagent.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
+        </div>
+    </div>
+</section>
 
-                <h3 class="heading"><a href="https://github.com/Mohdtalibakhtar">Multi-Agent Orchestration Framework</a></h3>
-                <p>Built scalable multi-agent system with specialized AI agents collaborating to solve complex tasks. Implements agent coordination, task routing, and real-time communication protocols using MCP.</p>
-              </div>
+<section id="about">
+    <div class="container">
+        <div class="section-label fade-in">ABOUT</div>
+        <h2 class="section-title fade-in">The gap between demos and production is where I live.</h2>
+
+        <div class="about-grid">
+            <div class="about-text fade-in stagger-1">
+                <div class="quote" style="margin-bottom: 2rem;">
+                    The best technology is invisible. It just works.
+                </div>
+
+                <p>
+                    I am a <strong>Data Scientist and AI Systems Architect</strong> specialising in multi-agent architectures and production-scale GenAI applications. My focus is making powerful, complex AI systems feel simple and natural to use.
+                </p>
+
+                <p>
+                    I have learned from working across data analytics, program analysis, and production AI that the hard part is not building models. It is building solutions that people actually adopt, trust, and rely on in real environments where things break.
+                </p>
+
+                <p>
+                    Currently building multi-agent architectures where GenAI moves from demos to production. I am deep in this space because we are still in the early innings of figuring out what these tools can really do, not the hype stuff, but the practical applications that matter.
+                </p>
             </div>
-          </div>
-        </div>
-	<br>
-		<div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Mohdtalibakhtar" class="block-20 zoom-effect" style="background-image: url('images/rag_system.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Mohdtalibakhtar">Enterprise RAG Pipeline</a></h3>
-				  <p>Production-ready RAG system using Neo4j graph database for semantic search and Pydantic AI for structured outputs. Implements intelligent chunking, embedding strategies, and context-aware retrieval for enterprise knowledge management.</p>
-				</div>
-			  </div>
-			</div>
-			
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/Mohdtalibakhtar" class="block-20 zoom-effect" style="background-image: url('images/nlp_pipeline.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/Mohdtalibakhtar">NLP Analytics Dashboard</a></h3>
-				  <p>AI-powered analytics platform converting natural language queries into automated visualizations. Built with LLM integration for query understanding, data retrieval, and dynamic chart generation.</p>
-				</div>
-			  </div>
-			</div>
-		 </div>
-	  </div>
-    </section>
 
-	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<div class="row justify-content-center">
-				<div class="col-md-7 ftco-animate text-center">
-					<h2>More projects on<span> Github  </span> </h2>
-					<div class="heading"> <h4> Building production-ready AI systems that solve real problems </h4>
-					<br>
-					<p><a href="https://github.com/Mohdtalibakhtar" class="btn btn-primary py-3 px-5">GitHub</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-
-    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
-      <div class="container">
-      	<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Contact</h1>
-            <h2 class="mb-4">Contact Me</h2>
-            <p>Let's discuss building intelligent AI systems together!</p>
-          </div>
+            <div class="info-card fade-in stagger-2">
+                <div class="info-row">
+                    <span class="info-key">profile</span>
+                    <span class="info-value">AI Architect</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-key">focus</span>
+                    <span class="info-value">Multi-Agent & GenAI</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-key">education</span>
+                    <span class="info-value">MSc Data Science</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-key">languages</span>
+                    <span class="info-value">EN, HI, UR</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-key">location</span>
+                    <span class="info-value">New Delhi, IN</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-key">hobbies</span>
+                    <span class="info-value">Chess, Open Source</span>
+                </div>
+            </div>
         </div>
 
-        <div class="row d-flex contact-info mb-5">
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-map-signs"></span>
-          		</div>
-          		<h3 class="mb-4">Address</h3>
-	            <p>Delhi, India</p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-phone2"></span>
-          		</div>
-          		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://7703991535">+91 7703991535</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-paper-plane"></span>
-          		</div>
-          		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:mohdtalibakhtar147@gmail.com">mohdtalibakhtar147@gmail.com</a></p>
-	          </div>
-          </div>
-          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<div class="align-self-stretch box p-4 text-center">
-          		<div class="icon d-flex align-items-center justify-content-center">
-          			<span class="icon-globe"></span>
-          		</div>
-          		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/15mrMzk5JT3-NPnK2cCyQqWwTjmL3YD3b/view?usp=sharing">Resume Link</a></p>
-	          </div>
-          </div>
+        <div class="stack-section">
+            <div class="section-label fade-in" style="margin-top: 4rem;">TECH STACK</div>
+            <div class="stack-grid">
+                <div class="stack-card fade-in">
+                    <div class="stack-category">AI & Agents</div>
+                    <div class="stack-items">
+                        <span class="stack-chip">Multi-Agent</span>
+                        <span class="stack-chip">MCP</span>
+                        <span class="stack-chip">Pydantic AI</span>
+                        <span class="stack-chip">LangChain</span>
+                        <span class="stack-chip">RAG</span>
+                    </div>
+                </div>
+                <div class="stack-card fade-in stagger-1">
+                    <div class="stack-category">LLM & NLP</div>
+                    <div class="stack-items">
+                        <span class="stack-chip">OpenAI</span>
+                        <span class="stack-chip">Anthropic</span>
+                        <span class="stack-chip">Neo4j</span>
+                        <span class="stack-chip">Vector DBs</span>
+                    </div>
+                </div>
+                <div class="stack-card fade-in stagger-2">
+                    <div class="stack-category">Languages</div>
+                    <div class="stack-items">
+                        <span class="stack-chip">Python</span>
+                        <span class="stack-chip">TypeScript</span>
+                        <span class="stack-chip">SQL</span>
+                        <span class="stack-chip">PySpark</span>
+                    </div>
+                </div>
+                <div class="stack-card fade-in stagger-3">
+                    <div class="stack-category">ML & Data</div>
+                    <div class="stack-items">
+                        <span class="stack-chip">PyTorch</span>
+                        <span class="stack-chip">TensorFlow</span>
+                        <span class="stack-chip">Pandas</span>
+                        <span class="stack-chip">Databricks</span>
+                    </div>
+                </div>
+                <div class="stack-card fade-in">
+                    <div class="stack-category">Cloud & Ops</div>
+                    <div class="stack-items">
+                        <span class="stack-chip">AWS</span>
+                        <span class="stack-chip">Azure</span>
+                        <span class="stack-chip">GCP</span>
+                        <span class="stack-chip">Docker</span>
+                        <span class="stack-chip">Logfire</span>
+                    </div>
+                </div>
+                <div class="stack-card fade-in stagger-1">
+                    <div class="stack-category">Visualisation</div>
+                    <div class="stack-items">
+                        <span class="stack-chip">Power BI</span>
+                        <span class="stack-chip">Tableau</span>
+                        <span class="stack-chip">Streamlit</span>
+                        <span class="stack-chip">Plotly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		  <div class="container">
-			<br>
-			<br>
-				<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-				  <li class="ftco-animate normal-txt">Find me on  </li>
-				  <li class="ftco-animate"><a href="https://www.linkedin.com/in/Mohdtalibakhtar/"><span class="icon-linkedin"></span></a></li>  
-				  <li class="ftco-animate"><a href="https://github.com/Mohdtalibakhtar"><span class="icon-github"></span></a></li>
-			      <li class="ftco-animate"><a href="https://www.instagram.com/mohdtalibakhtar/"><span class="icon-instagram"></span></a></li>
-				</ul>
-			<br>
-		   </div>
-   </div>
- </section>
+        <div class="featured-section">
+            <div class="section-label fade-in" style="margin-top: 5rem;">FEATURED WORK</div>
+            <div class="featured-grid">
+                <a href="https://feedpulse-three.vercel.app/login" target="_blank" class="featured-card fade-in">
+                    <div class="featured-label">LIVE PRODUCT</div>
+                    <div class="featured-title">Feedpulse</div>
+                    <div class="featured-desc">Product feedback intelligence platform. Aggregates feedback from 6 platforms including Reddit, Trustpilot, and Twitter, and runs LLM sentiment analysis to generate action plans for product teams.</div>
+                    <div class="featured-link">Check it out →</div>
+                </a>
 
+                <a href="https://feedhire.me" target="_blank" class="featured-card fade-in stagger-1">
+                    <div class="featured-label">LIVE PRODUCT</div>
+                    <div class="featured-title">Feedhire</div>
+                    <div class="featured-desc">Hidden jobs platform that surfaces roles never posted publicly. Scrapes founder posts, startup hiring pages, and niche boards, then uses multi-agent classification to match them to candidate profiles.</div>
+                    <div class="featured-link">Check it out →</div>
+                </a>
 
- 
-	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
+                <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003190301-7" target="_blank" class="featured-card fade-in stagger-2">
+                    <div class="featured-label">PUBLISHED RESEARCH</div>
+                    <div class="featured-title">AI + Blockchain in Healthcare</div>
+                    <div class="featured-desc">Peer reviewed chapter in Taylor & Francis / CRC Press book applying and comparing ML algorithms including Logistic Regression, SVM, KNN, Random Forest, and XGBoost on heart attack prediction.</div>
+                    <div class="featured-link">Read on Taylor & Francis →</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
+<section id="experience">
+    <div class="container">
+        <div class="section-label fade-in">EXPERIENCE</div>
+        <h2 class="section-title fade-in">Where I have been building.</h2>
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+        <div class="exp-item fade-in">
+            <div class="exp-date">Feb 2025 — Now</div>
+            <div>
+                <div class="exp-role">Senior Data Scientist</div>
+                <div class="exp-company">Zavmo · Bangalore, India</div>
+                <p class="exp-desc">Building production-scale multi-agent AI systems and GenAI applications at an AI-first startup. Architected the full backend from scratch.</p>
+                <ul class="exp-list">
+                    <li><strong>Architected multi-agent AI system</strong> with specialised agents for user guidance, data processing, and workflow automation, serving real users end to end.</li>
+                    <li><strong>Engineered MCP server</strong> as foundational middleware enabling real-time synchronisation between AI agents, product services, and external APIs.</li>
+                    <li><strong>Built end-to-end RAG pipeline</strong> using Neo4j graph database and Pydantic AI for structured LLM outputs and context-aware retrieval.</li>
+                    <li><strong>Shipped real-time voice pipeline</strong> integrating STT and TTS with streaming AI agents for low-latency conversational experiences.</li>
+                    <li><strong>Created behavioural analytics dashboard</strong> converting user interaction signals into actionable insights for continuous model optimisation.</li>
+                </ul>
+            </div>
+        </div>
 
+        <div class="exp-item fade-in">
+            <div class="exp-date">Feb 2024 — Dec 2024</div>
+            <div>
+                <div class="exp-role">Data Analyst</div>
+                <div class="exp-company">Divas World Ltd · Manchester, UK</div>
+                <p class="exp-desc">Led data analytics initiatives for a global e-commerce company, driving business growth through data-driven insights.</p>
+                <ul class="exp-list">
+                    <li>Analysed customer data from Salesforce CRM using SQL and Python, achieving <strong>15% increase in sales conversion</strong> and <strong>20% reduction in churn</strong>.</li>
+                    <li>Led A/B testing and hypothesis testing to validate product changes, delivering insights to product teams.</li>
+                    <li>Built interactive Power BI dashboards translating complex data findings into clear insights for stakeholders.</li>
+                    <li>Automated data extraction and transformation using Python and SQL, reducing manual prep time by <strong>40%</strong>.</li>
+                </ul>
+            </div>
+        </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-    
-  </body>
+        <div class="exp-item fade-in">
+            <div class="exp-date">Jul 2022 — Aug 2023</div>
+            <div>
+                <div class="exp-role">Program Analyst</div>
+                <div class="exp-company">WNS Global Services · Delhi, India</div>
+                <p class="exp-desc">Built data infrastructure and ML pipelines for enterprise clients, establishing the foundation for advanced analytics.</p>
+                <ul class="exp-list">
+                    <li>Built and maintained production data pipelines using <strong>Databricks, Python, and PySpark</strong> for large-scale processing.</li>
+                    <li>Developed ML model pipelines, SQL-based warehousing solutions, and feature engineering workflows.</li>
+                    <li>Engineered automated data quality validation systems, improving reliability by <strong>10%</strong>.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <div class="section-label fade-in">SIDE PROJECTS</div>
+        <h2 class="section-title fade-in">Experiments & open source.</h2>
+
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">01 / PrepareMe</div>
+                    <span class="project-status beta">CASE STUDY</span>
+                </div>
+                <h3 class="project-title">AI Interview Simulation Platform</h3>
+                <p class="project-desc">Multi-agent system running technical, introductory, and cultural fit interview rounds with context-aware feedback. Agents coordinate through task routing, and RAG provides role-specific context. Built solo end-to-end.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Multi-Agent</span>
+                    <span class="project-tag">RAG</span>
+                    <span class="project-tag">Pydantic AI</span>
+                    <span class="project-tag">Python</span>
+                </div>
+            </div>
+
+            <div class="project-card fade-in stagger-1">
+                <div class="project-header">
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">02 / MCP Framework</div>
+                    <span class="project-status beta">WIP</span>
+                </div>
+                <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">Multi-Agent Orchestration</a></h3>
+                <p class="project-desc">Scalable multi-agent system with coordinated AI agents collaborating on complex tasks. Implements agent routing, real-time communication, and structured outputs using the Model Context Protocol.</p>
+                <div class="project-tags">
+                    <span class="project-tag">MCP</span>
+                    <span class="project-tag">Agents</span>
+                    <span class="project-tag">Python</span>
+                </div>
+                <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card fade-in stagger-2">
+                <div class="project-header">
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">03 / Cold Email Gen</div>
+                    <span class="project-status">OPEN SOURCE</span>
+                </div>
+                <h3 class="project-title"><a href="https://github.com/Mohdtalibakhtar/Cold_Email_Generator" target="_blank">Intelligent Email Generator</a></h3>
+                <p class="project-desc">GenAI tool using LLMs to generate personalised, context-aware cold emails from a job page link. Uses prompt engineering and few-shot learning for high-quality outreach at scale.</p>
+                <div class="project-tags">
+                    <span class="project-tag">LangChain</span>
+                    <span class="project-tag">Streamlit</span>
+                    <span class="project-tag">LLMs</span>
+                </div>
+                <a href="https://github.com/Mohdtalibakhtar/Cold_Email_Generator" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-header">
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">04 / Autism Detection</div>
+                    <span class="project-status beta">RESEARCH</span>
+                </div>
+                <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">fMRI Classification Model</a></h3>
+                <p class="project-desc">Processed time-series fMRI data to classify subjects using deep learning. Compared LSTM, CNN, and SVM approaches. LSTM achieved 76% accuracy on the benchmark dataset.</p>
+                <div class="project-tags">
+                    <span class="project-tag">LSTM</span>
+                    <span class="project-tag">CNN</span>
+                    <span class="project-tag">PyTorch</span>
+                </div>
+                <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card fade-in stagger-1">
+                <div class="project-header">
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">05 / Market Monitoring</div>
+                    <span class="project-status">PRODUCTION</span>
+                </div>
+                <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">Financial Data Quality Pipeline</a></h3>
+                <p class="project-desc">ETL processes and real-time anomaly detection for financial market data. Designed data quality checks and dashboards for monitoring and reporting across multiple data sources.</p>
+                <div class="project-tags">
+                    <span class="project-tag">Azure</span>
+                    <span class="project-tag">PySpark</span>
+                    <span class="project-tag">Tableau</span>
+                </div>
+                <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+
+            <div class="project-card fade-in stagger-2">
+                <div class="project-header">
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">06 / NLP Experiments</div>
+                    <span class="project-status">OPEN SOURCE</span>
+                </div>
+                <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">NLP Code Library</a></h3>
+                <p class="project-desc">Collection of NLP experiments, text classification models, and embedding pipelines. Open source code from my time exploring different ML approaches for text understanding.</p>
+                <div class="project-tags">
+                    <span class="project-tag">NLP</span>
+                    <span class="project-tag">Transformers</span>
+                    <span class="project-tag">Python</span>
+                </div>
+                <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="contact-section">
+        <div class="container">
+            <div class="section-label">LET'S BUILD</div>
+            <h2>Got an AI problem that feels <span>unsolvable</span>?</h2>
+            <p style="font-family: var(--mono); font-size: 0.95rem; color: rgba(250,250,247,0.7); max-width: 600px;">
+                I love talking about multi-agent systems, production AI, and how to take cool demos and make them ship. Reach out.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-label">// EMAIL</div>
+                    <a href="mailto:mohdtalibakhtar147@gmail.com" class="contact-value">mohdtalibakhtar147@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">// LINKEDIN</div>
+                    <a href="https://linkedin.com/in/mohdtalibakhtar" target="_blank" class="contact-value">/in/mohdtalibakhtar</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">// GITHUB</div>
+                    <a href="https://github.com/mohdtalibakhtar" target="_blank" class="contact-value">@mohdtalibakhtar</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-label">// LOCATION</div>
+                    <span class="contact-value" style="border: none;">New Delhi, India</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© <span id="year"></span> Mohd Talib Akhtar · Built with care · Always learning, always building</p>
+    </div>
+</footer>
+
+<script>
+    // Typing animation
+    const texts = [
+        'whoami → AI Systems Architect',
+        'cat skills.txt → multi-agent, MCP, RAG',
+        'deploying agents that actually work',
+        'always learning, always building'
+    ];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingEl = document.getElementById('typing');
+
+    function type() {
+        const current = texts[textIndex];
+        if (isDeleting) {
+            typingEl.textContent = current.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingEl.textContent = current.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let speed = isDeleting ? 30 : 70;
+        if (!isDeleting && charIndex === current.length) {
+            speed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+            speed = 400;
+        }
+        setTimeout(type, speed);
+    }
+    type();
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
 </html>
