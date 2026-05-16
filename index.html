@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohd Talib Akhtar — AI Systems Architect</title>
-    <meta name="description" content="Senior Data Scientist and AI Systems Architect specialising in production multi-agent systems, MCP servers, and RAG pipelines.">
+    <meta name="description" content="AI engineer building production multi agent systems. MCP servers, RAG pipelines, voice agents, and open source eval tooling.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -872,12 +872,12 @@
                 </h1>
 
                 <p class="hero-subtitle fade-in stagger-3">
-                    Senior Data Scientist and AI Systems Architect. I ship production multi-agent systems, MCP servers, and RAG pipelines that real users depend on every day.
+                    AI engineer building production multi agent systems. MCP servers, RAG pipelines, voice agents, and open source eval tooling that survives real users.
                 </p>
 
                 <div class="hero-meta fade-in stagger-3">
                     <span>Based in New Delhi</span>
-                    <span>3 yrs experience</span>
+                    <span>Shipping agents in prod</span>
                     <span>MSc Data Science, London</span>
                 </div>
 
@@ -908,7 +908,8 @@
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"multi-agent systems"</span>,</div>
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"MCP servers"</span>,</div>
                     <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"RAG pipelines"</span>,</div>
-                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"voice agents"</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"voice agents"</span>,</div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"agent evals"</span></div>
                     <div>&nbsp;&nbsp;]</div>
                     <div>&nbsp;&nbsp;<span class="prompt">status</span> = <span class="string">"shipping daily"</span></div>
                     <div class="comment"># always learning, always building</div>
@@ -930,7 +931,7 @@
                 </div>
 
                 <p>
-                    I am a <strong>Data Scientist and AI Systems Architect</strong> specialising in multi-agent architectures and production-scale GenAI applications. My focus is making powerful, complex AI systems feel simple and natural to use.
+                    I am an <strong>AI engineer</strong> building production multi agent systems. My focus is the layer between architecture and deployment where most AI projects stall: MCP servers, RAG pipelines on knowledge graphs, Pydantic validated agent workflows, and observability that catches regressions before users do.
                 </p>
 
                 <p>
@@ -981,6 +982,7 @@
                         <span class="stack-chip">Pydantic AI</span>
                         <span class="stack-chip">LangChain</span>
                         <span class="stack-chip">RAG</span>
+                        <span class="stack-chip">Tracecheck</span>
                     </div>
                 </div>
                 <div class="stack-card fade-in stagger-1">
@@ -1035,21 +1037,28 @@
         <div class="featured-section">
             <div class="section-label fade-in" style="margin-top: 5rem;">FEATURED WORK</div>
             <div class="featured-grid">
-                <a href="https://feedpulse-three.vercel.app/login" target="_blank" class="featured-card fade-in">
+                <a href="https://github.com/Mohdtalibakhtar/tracecheck" target="_blank" class="featured-card fade-in">
+                    <div class="featured-label">OPEN SOURCE</div>
+                    <div class="featured-title">Tracecheck</div>
+                    <div class="featured-desc">An eval library for multi step agent traces. Scores tool accuracy, step efficiency, and failure modes deterministically in CI, with an optional LLM judge for output quality. Pydantic AI and LangGraph adapters, OpenTelemetry ingest. Published to PyPI.</div>
+                    <div class="featured-link">View on GitHub →</div>
+                </a>
+
+                <a href="https://feedpulse-three.vercel.app/login" target="_blank" class="featured-card fade-in stagger-1">
                     <div class="featured-label">LIVE PRODUCT</div>
                     <div class="featured-title">Feedpulse</div>
                     <div class="featured-desc">Product feedback intelligence platform. Aggregates feedback from 6 platforms including Reddit, Trustpilot, and Twitter, and runs LLM sentiment analysis to generate action plans for product teams.</div>
                     <div class="featured-link">Check it out →</div>
                 </a>
 
-                <a href="https://feedhire.me" target="_blank" class="featured-card fade-in stagger-1">
+                <a href="https://feedhire.me" target="_blank" class="featured-card fade-in stagger-2">
                     <div class="featured-label">LIVE PRODUCT</div>
                     <div class="featured-title">Feedhire</div>
                     <div class="featured-desc">Hidden jobs platform that surfaces roles never posted publicly. Scrapes founder posts, startup hiring pages, and niche boards, then uses multi-agent classification to match them to candidate profiles.</div>
                     <div class="featured-link">Check it out →</div>
                 </a>
 
-                <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003190301-7" target="_blank" class="featured-card fade-in stagger-2">
+                <a href="https://www.taylorfrancis.com/chapters/edit/10.1201/9781003190301-7" target="_blank" class="featured-card fade-in stagger-3">
                     <div class="featured-label">PUBLISHED RESEARCH</div>
                     <div class="featured-title">AI + Blockchain in Healthcare</div>
                     <div class="featured-desc">Peer reviewed chapter in Taylor & Francis / CRC Press book applying and comparing ML algorithms including Logistic Regression, SVM, KNN, Random Forest, and XGBoost on heart attack prediction.</div>
@@ -1135,22 +1144,7 @@
 
             <div class="project-card fade-in stagger-1">
                 <div class="project-header">
-                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">02 / MCP Framework</div>
-                    <span class="project-status beta">WIP</span>
-                </div>
-                <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">Multi-Agent Orchestration</a></h3>
-                <p class="project-desc">Scalable multi-agent system with coordinated AI agents collaborating on complex tasks. Implements agent routing, real-time communication, and structured outputs using the Model Context Protocol.</p>
-                <div class="project-tags">
-                    <span class="project-tag">MCP</span>
-                    <span class="project-tag">Agents</span>
-                    <span class="project-tag">Python</span>
-                </div>
-                <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
-            </div>
-
-            <div class="project-card fade-in stagger-2">
-                <div class="project-header">
-                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">03 / Cold Email Gen</div>
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">02 / Cold Email Gen</div>
                     <span class="project-status">OPEN SOURCE</span>
                 </div>
                 <h3 class="project-title"><a href="https://github.com/Mohdtalibakhtar/Cold_Email_Generator" target="_blank">Intelligent Email Generator</a></h3>
@@ -1163,9 +1157,9 @@
                 <a href="https://github.com/Mohdtalibakhtar/Cold_Email_Generator" target="_blank" class="project-link">View on GitHub →</a>
             </div>
 
-            <div class="project-card fade-in">
+            <div class="project-card fade-in stagger-2">
                 <div class="project-header">
-                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">04 / Autism Detection</div>
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">03 / Autism Detection</div>
                     <span class="project-status beta">RESEARCH</span>
                 </div>
                 <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">fMRI Classification Model</a></h3>
@@ -1178,9 +1172,9 @@
                 <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
             </div>
 
-            <div class="project-card fade-in stagger-1">
+            <div class="project-card fade-in">
                 <div class="project-header">
-                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">05 / Market Monitoring</div>
+                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">04 / Market Monitoring</div>
                     <span class="project-status">PRODUCTION</span>
                 </div>
                 <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">Financial Data Quality Pipeline</a></h3>
@@ -1193,20 +1187,6 @@
                 <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
             </div>
 
-            <div class="project-card fade-in stagger-2">
-                <div class="project-header">
-                    <div style="font-family: var(--mono); font-size: 0.85rem; color: var(--fg-subtle);">06 / NLP Experiments</div>
-                    <span class="project-status">OPEN SOURCE</span>
-                </div>
-                <h3 class="project-title"><a href="https://github.com/mohdtalibakhtar" target="_blank">NLP Code Library</a></h3>
-                <p class="project-desc">Collection of NLP experiments, text classification models, and embedding pipelines. Open source code from my time exploring different ML approaches for text understanding.</p>
-                <div class="project-tags">
-                    <span class="project-tag">NLP</span>
-                    <span class="project-tag">Transformers</span>
-                    <span class="project-tag">Python</span>
-                </div>
-                <a href="https://github.com/mohdtalibakhtar" target="_blank" class="project-link">View on GitHub →</a>
-            </div>
         </div>
     </div>
 </section>
@@ -1251,9 +1231,9 @@
 <script>
     // Typing animation
     const texts = [
-        'whoami → AI Systems Architect',
-        'cat skills.txt → multi-agent, MCP, RAG',
-        'deploying agents that actually work',
+        'whoami → AI engineer',
+        'cat skills.txt → multi agent, MCP, evals',
+        'shipping production agents',
         'always learning, always building'
     ];
     let textIndex = 0;
